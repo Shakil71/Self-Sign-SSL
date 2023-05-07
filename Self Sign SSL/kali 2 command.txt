@@ -1,0 +1,18 @@
+sudo apt update
+sudo apt-get install open-vm-tools-desktop
+sudo apt install kali-root-login
+sudo passwd
+reboot
+----------------------#switch user
+----------------------#webmin installation
+sudo nano /etc/apt/sources.list
+----------------------#add this line
+	deb http://download.webmin.com/download/repository sarge contrib
+
+wget -q -O- http://www.webmin.com/jcameron-key.asc | sudo apt-key add
+sudo apt update
+sudo apt install webmin
+sudo ufw allow 10000
+sudo cd /usr/lib/systemd/system
+sudo cp named.service bind9.service
+
